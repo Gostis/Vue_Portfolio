@@ -1,17 +1,20 @@
 <template>
   <div>
     <v-row id="section1" class="section" align="center" justify="center">
+      <v-btn v-scroll-to="'#section2'">Section 2</v-btn>
       <v-col class="text-center" cols="12">
         <h1 class="display-1 font-weight-thin mb-4">Section 1</h1>
       </v-col>
     </v-row>
     <v-row id="section2" class="section" align="center" justify="center">
+      <v-btn v-scroll-to="'#section3'">Section 3</v-btn>
       <v-col class="text-center" cols="12">
         <h1 class="display-1 font-weight-thin mb-4">Section 2</h1>
       </v-col>
     </v-row>
     <v-row id="section3" class="section" align="center" justify="center">
       <v-col class="text-center" cols="12">
+        <v-btn v-scroll-to="'#section1'">Section 1</v-btn>
         <h1 class="display-1 font-weight-thin mb-4">Section 3</h1>
       </v-col>
     </v-row>
@@ -30,6 +33,7 @@ export default {
 .section {
   height: 100vh;
   width: 100%;
+  margin: 0%;
 }
 #section1 {
   background-color: aquamarine;
