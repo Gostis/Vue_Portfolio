@@ -3,16 +3,13 @@
     <v-spacer></v-spacer>
 
     <v-toolbar-title class="title">
-      <router-link to="/">Home</router-link>
+      <p text class="cursor" v-scroll-to="'#section1'">Home</p>
     </v-toolbar-title>
     <v-toolbar-title class="title">
-      <router-link to="/portfolio">Portfolio</router-link>
+      <p class="cursor" v-scroll-to="'#section2'">Portfolio</p>
     </v-toolbar-title>
     <v-toolbar-title class="title">
-      <router-link to="/resume">Resume</router-link>
-    </v-toolbar-title>
-    <v-toolbar-title class="title">
-      <router-link to="/about">About</router-link>
+      <p class="cursor" v-scroll-to="'#section3'">Resume</p>
     </v-toolbar-title>
 
     <v-spacer></v-spacer>
@@ -49,6 +46,10 @@ export default {
   background-color: rgb(40, 40, 40) !important;
 }
 .NavbarTop {
-  background-color: rgb(255, 0, 0, 0.02) !important;
+  background-color: rgb(255, 255, 255, 0.02) !important;
+}
+
+.cursor {
+  cursor: pointer;
 }
 </style>
