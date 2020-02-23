@@ -3,6 +3,7 @@ import App from "./App.vue";
 import router from "./router";
 import vuetify from "./plugins/vuetify";
 import VueScrollTo from "vue-scrollto";
+import "@fortawesome/fontawesome-free/css/all.css";
 
 Vue.use(VueScrollTo);
 
@@ -11,5 +12,8 @@ Vue.config.productionTip = false;
 new Vue({
   router,
   vuetify,
+  icons: {
+    iconfont: "fa"
+  },
   render: h => h(App)
 }).$mount("#app");

@@ -1,18 +1,41 @@
 <template>
   <div>
-    <v-row id="section1" class="section" align="center" justify="center">
-      <v-col lg="6" sm="12" cols="6">
+    <v-row id="section1" class="section">
+      <v-col lg="6" sm="12" cols="6" align-self="center">
         <v-row>
-          <h1 class="mainText display-4 font-weight-thin mb-4">Jacob Nyman</h1>
+          <h1 class="mainText display-4 font-weight-thin mb-4">
+            Jacob Nyman
+          </h1>
         </v-row>
         <v-row>
-          <h1
-            class="mainText title font-weight-thin mb-4"
-          >- Full Stack developer | M.Sc student in Media Technology & Engineering</h1>
+          <h1 class="mainText title font-weight-thin mb-4">
+            - Full Stack developer | M.Sc student in Media Technology &
+            Engineering
+          </h1>
+        </v-row>
+        <v-row id="iconRow" no-gutters>
+          <v-btn text icon color="black">
+            <v-icon>fab fa-github</v-icon>
+          </v-btn>
+
+          <v-btn text icon color="black">
+            <v-icon>far fa-envelope</v-icon>
+          </v-btn>
+
+          <v-btn text icon color="black">
+            <v-icon>fab fa-linkedin</v-icon>
+          </v-btn>
+
+          <v-btn text icon color="black">
+            <v-icon>fab fa-facebook</v-icon>
+          </v-btn>
         </v-row>
       </v-col>
-      <v-col cols="6" lg="6" sm="12">
-        <v-img src="../assets/Profile_image_only.png" aspect-ratio="1.1"></v-img>
+      <v-col cols="6" lg="6" sm="12" align-self="end" class="pa-0">
+        <v-img
+          src="../assets/Profile_image_only.png"
+          aspect-ratio="1.1"
+        ></v-img>
       </v-col>
     </v-row>
     <v-row id="section2" class="section" align="start">
@@ -21,32 +44,7 @@
       </v-col>
       <v-col class="sectionTitle2" cols="9">
         <v-row algin="center" no-gutters>
-          <v-col cols="3" lg="3">
-            <v-dialog v-model="dialog" width="1000">
-              <template v-slot:activator="{ on }">
-                <v-card v-on="on" class="sizeBox" outlined tile>1</v-card>
-              </template>
-
-              <v-card>
-                <v-card-title class="headline grey lighten-2" primary-title>Privacy Policy</v-card-title>
-
-                <v-row algin="center" no-gutters>
-                  <v-col cols="3" lg="3">
-                    <v-card class="sizeBox" outlined tile>1</v-card>
-                  </v-col>
-                  <v-col cols="3" lg="3">
-                    <v-card class="sizeBox" outlined tile>1</v-card>
-                  </v-col>
-                  <v-col cols="3" lg="3">
-                    <v-card class="sizeBox" outlined tile>1</v-card>
-                  </v-col>
-                  <v-col cols="3" lg="3">
-                    <v-card class="sizeBox" outlined tile>1</v-card>
-                  </v-col>
-                </v-row>
-              </v-card>
-            </v-dialog>
-          </v-col>
+          <v-col cols="3" lg="3"> <ProjectModal /></v-col>
           <v-col cols="3" lg="3">
             <v-card class="sizeBox" outlined tile>1</v-card>
           </v-col>
@@ -83,10 +81,10 @@
 
 <script>
 // @ is an alias to /src
-
+import ProjectModal from "../components/ProjectModal";
 export default {
   name: "Home",
-  components: {},
+  components: { ProjectModal },
   methods: {
     onClick() {
       console.log("Hello");
@@ -94,7 +92,10 @@ export default {
   }
 };
 </script>
-<style scoped>
+<style>
+#iconRow {
+  padding-left: 20px;
+}
 .section {
   height: 100vh;
   width: 100%;
@@ -117,7 +118,7 @@ export default {
 .mainText {
   color: rgb(47, 47, 47, 1);
   justify-content: start;
-  padding-left: 20px;
+  padding-left: 40px;
 }
 
 .sectionTitle2 {
