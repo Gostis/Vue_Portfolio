@@ -3,9 +3,7 @@
     <v-row id="section1" class="section">
       <v-col lg="6" sm="12" cols="6" align-self="center">
         <v-row>
-          <h1 class="mainText display-4 font-weight-thin mb-4">
-            Jacob Nyman
-          </h1>
+          <h1 class="mainText display-4 font-weight-thin mb-4">Jacob Nyman</h1>
         </v-row>
         <v-row>
           <h1 class="mainText title font-weight-thin mb-4">
@@ -15,61 +13,28 @@
         </v-row>
         <v-row id="iconRow" no-gutters>
           <v-btn text icon color="black">
-            <v-icon>fab fa-github</v-icon>
+            <v-icon v-on:click="goToSocial('github')">fab fa-github</v-icon>
           </v-btn>
 
           <v-btn text icon color="black">
-            <v-icon>far fa-envelope</v-icon>
+            <v-icon v-on:click="goToSocial('mail')">far fa-envelope</v-icon>
           </v-btn>
 
           <v-btn text icon color="black">
-            <v-icon>fab fa-linkedin</v-icon>
+            <v-icon v-on:click="goToSocial('linkedin')">fab fa-linkedin</v-icon>
           </v-btn>
 
           <v-btn text icon color="black">
-            <v-icon>fab fa-facebook</v-icon>
+            <v-icon v-on:click="goToSocial('facebook')">fab fa-facebook</v-icon>
           </v-btn>
         </v-row>
       </v-col>
       <v-col cols="6" lg="6" sm="12" align-self="end" class="pa-0">
-        <v-img
-          src="../assets/Profile_image_only.png"
-          aspect-ratio="1.1"
-        ></v-img>
+        <v-img src="../assets/Profile_image_only.png" aspect-ratio="1.1"></v-img>
       </v-col>
     </v-row>
     <v-row id="section2" class="section" align="start">
-      <v-col class="sectionTitle2" cols="3">
-        <h1 class="display-4 font-weight-thin mb-4">Portfolio</h1>
-      </v-col>
-      <v-col class="sectionTitle2" cols="9">
-        <v-row algin="center" no-gutters>
-          <v-col cols="3" lg="3"> <ProjectModal /></v-col>
-          <v-col cols="3" lg="3">
-            <v-card class="sizeBox" outlined tile>1</v-card>
-          </v-col>
-          <v-col cols="3" lg="3">
-            <v-card class="sizeBox" outlined tile>1</v-card>
-          </v-col>
-          <v-col cols="3" lg="3">
-            <v-card class="sizeBox" outlined tile>1</v-card>
-          </v-col>
-        </v-row>
-        <v-row algin="center" no-gutters>
-          <v-col cols="3" lg="3">
-            <v-card class="sizeBox" outlined tile>1</v-card>
-          </v-col>
-          <v-col cols="3" lg="3">
-            <v-card class="sizeBox" outlined tile>1</v-card>
-          </v-col>
-          <v-col cols="3" lg="3">
-            <v-card class="sizeBox" outlined tile>1</v-card>
-          </v-col>
-          <v-col cols="3" lg="3">
-            <v-card class="sizeBox" outlined tile>1</v-card>
-          </v-col>
-        </v-row>
-      </v-col>
+      <ProjectsGrid />
     </v-row>
     <v-row id="section3" class="section" align="center" justify="center">
       <v-col class="text-center" cols="3">
@@ -81,13 +46,28 @@
 
 <script>
 // @ is an alias to /src
-import ProjectModal from "../components/ProjectModal";
+import ProjectsGrid from "../components/ProjectsGrid";
 export default {
   name: "Home",
-  components: { ProjectModal },
+  components: { ProjectsGrid },
   methods: {
-    onClick() {
-      console.log("Hello");
+    goToSocial(link) {
+      switch (link) {
+        case "github":
+          location.href = "https://github.com/Gostis";
+          break;
+        case "facebook":
+          location.href = "https://www.facebook.com/jacob.nyman.10";
+          break;
+        case "linkedin":
+          location.href = "https://www.linkedin.com/in/jacob-nyman-27b10013a/";
+          break;
+        case "mail":
+          location.href = "mailto:jacob.nyman@hotmail.com";
+          break;
+        default:
+          console.log("no link");
+      }
     }
   }
 };

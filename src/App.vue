@@ -1,19 +1,19 @@
 <template>
   <v-app>
     <Header />
-
-    <router-view />
+    <Home />
   </v-app>
 </template>
 
 <script>
 import Header from "./components/layout/Header";
-
+import Home from "./views/Home";
 export default {
   name: "App",
 
   components: {
-    Header
+    Header,
+    Home
   },
 
   data: () => ({
